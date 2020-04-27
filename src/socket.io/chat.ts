@@ -1,5 +1,3 @@
-import {connection} from '../mysql/connection'
-
 const messages: any[] = [
 
 ]

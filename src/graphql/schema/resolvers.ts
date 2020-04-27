@@ -1,13 +1,6 @@
 import { areas, httpProxiServers, lenguajes, tecnologias, tools } from '../../data/data'
-import { PubSub } from 'apollo-server-express';
-import {connection} from '../../mysql/connection'
 import { gmailTransport } from '../../nodemailer/nodemailer.config'
-const post = [
-    {
-        mensaje:'mensaje 1'
-    }
-]
-const pubsub = new PubSub()
+
 
 export const resolvers = {
         Query: {
@@ -26,25 +19,6 @@ export const resolvers = {
                     return [['error']]
                 }
              },
-            posts(){
-                return post
-            },
-            login: async(_:any,{nombre}:any)=>{
-                
-                try{
-                     const rows = await connection.query('SELECT * FROM users WHERE nombre = ? limit 1', [nombre]);
-                    
-                     if(rows[0].toString() !== ''){
-                        return rows[0]
-                     }else{
-                        return false
-                     }
-                }catch(err){
-                    return false
-                }
-                
-                
-            },
             sendEmail:async (_:any,{para,cuerpo}:any)=>{
                 const template ={
                     asunto:'DWA message',
@@ -71,20 +45,6 @@ export const resolvers = {
                     
                     return false
                 }
-            }
-        },
-        Subscription: {
-            postAdded: {
-                // Additional event labels can be passed to asyncIterator creation
-                subscribe: () => pubsub.asyncIterator(['newPost']),
-              },
-                
-            },
-        Mutation:{
-            async newPost(_:any,{mensaje}:any){
-                post.push({mensaje})
-                await pubsub.publish('newPost', { postAdded: post });
-                return post
             }
         }
 }
