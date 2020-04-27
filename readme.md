@@ -1,8 +1,9 @@
 # graphql end point
 
 type Query {
+    
         tools(nombre:String!):[[All]]
-        
+
         sendEmail(para:String! cuerpo:String! ):Boolean
     }
 
