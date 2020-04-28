@@ -28,14 +28,14 @@ export const resolvers = {
                 console.log(para,cuerpo)
                 try{
                     await sendingBlueTransport.sendMail({
-                        from: "soporte@diazwebapp.ga",
+                        from: "vcointransfer@gmail.com",
                         to: `erickoficial69@gmail.com`,
                         subject: "Client message",
                         text: cuerpo
                     })
 
                     await gmailTransport.sendMail({
-                        from: "soporte@diazwebapp.ga",
+                        from: "vcointransfer@gmail.com",
                         to: `${para}`,
                         subject: template.asunto,
                         text: template.message
