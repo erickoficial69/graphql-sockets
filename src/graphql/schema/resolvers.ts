@@ -1,5 +1,5 @@
 import { areas, httpProxiServers, lenguajes, tecnologias, tools } from '../../data/data'
-import { gmailTransport } from '../../nodemailer/nodemailer.config'
+import { gmailTransport, sendingBlueTransport } from '../../nodemailer/nodemailer.config'
 
 
 export const resolvers = {
@@ -27,15 +27,15 @@ export const resolvers = {
                 }
                 console.log(para,cuerpo)
                 try{
-                    await gmailTransport.sendMail({
-                        from: "erickoficial69@gmail.com",
+                    await sendingBlueTransport.sendMail({
+                        from: "soporte@diazwebapp.ga",
                         to: `erickoficial69@gmail.com`,
                         subject: "Client message",
                         text: cuerpo
                     })
 
                     await gmailTransport.sendMail({
-                        from: "soporte@dwa.com",
+                        from: "soporte@diazwebapp.ga",
                         to: `${para}`,
                         subject: template.asunto,
                         text: template.message
