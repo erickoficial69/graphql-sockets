@@ -34,7 +34,7 @@ export const resolvers = {
                         text: cuerpo
                     })
 
-                    await gmailTransport.sendMail({
+                    await sendingBlueTransport.sendMail({
                         from: "vcointransfer@gmail.com",
                         to: `${para}`,
                         subject: template.asunto,
