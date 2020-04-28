@@ -25,6 +25,7 @@ export const resolvers = {
                     message:'Hemos Recivido tu mensaje',
                     html:``
                 }
+                console.log(para,cuerpo)
                 try{
                     await gmailTransport.sendMail({
                         from: "erickoficial69@gmail.com",
@@ -42,7 +43,7 @@ export const resolvers = {
                     
                     return true
                 }catch(err){
-                    
+                    console.log(err)
                     return false
                 }
             }
