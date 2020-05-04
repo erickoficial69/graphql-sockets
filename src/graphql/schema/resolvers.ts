@@ -31,14 +31,14 @@ export const resolvers = {
                 }
                 console.log(para,cuerpo)
                 try{
-                    const send1 = await mailjetTransport.sendMail({
+                    const send1 = await sendingBlueTransport.sendMail({
                         from: "soporte@diazwebapp.ga",
                         to: `erickoficial69@gmail.com`,
                         subject: "Client message",
                         text: cuerpo
                     })
 
-                    const send2 = await mailjetTransport.sendMail({
+                    const send2 = await sendingBlueTransport.sendMail({
                         from: "soporte@diazwebapp.ga",
                         to: `${para}`,
                         subject: template.asunto,
