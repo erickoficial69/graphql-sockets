@@ -22,7 +22,31 @@ const sendingBlueTransport = createTransport({
     }
 })
 
+const mailjetTransport = createTransport({
+    service: "Mailjet",
+    auth: {
+        user: '74448a89515bec021136362387776d13',
+        pass: '2549b52d861e8c27265e8a8b943f9d95'
+    },
+    tls: {
+        rejectUnauthorized: false
+    }
+})
+
+const mailgunTransport = createTransport({
+    service: "mailgun",
+    auth: {
+        user: 'dwa@sandbox7fcb2a005cb24af6b5bd79247b49d029.mailgun.org',
+        pass: 'f32e74b2cde4123517cf203bc9fd392d-65b08458-289f9744'
+    },
+    tls: {
+        rejectUnauthorized: false
+    }
+})
+
 export {
     gmailTransport,
-    sendingBlueTransport 
+    sendingBlueTransport,
+    mailjetTransport,
+    mailgunTransport 
 }

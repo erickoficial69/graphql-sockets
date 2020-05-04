@@ -1,23 +1,23 @@
 export const tecnologias =[
     {
         id:'1',
-        nombre:'GraphQL'
+        nombre:'graphql'
     },
     {
         id:'2',
-        nombre:'Sockets'
+        nombre:'sockets'
     }
 ]
 
 export const httpProxiServers =[
     {
         id:'1',
-        nombre:'Nginx',
+        nombre:'nginx',
         area:1
     },
     {
         id:'2',
-        nombre:'Apache',
+        nombre:'apache',
         area:1
     }
 ]
@@ -25,47 +25,42 @@ export const httpProxiServers =[
 export const tools =[
     {
         id:1,
-        nombre:'Nodejs',
+        nombre:'node.js',
         area:1
     },
     {
         id:2,
-        nombre:'React Native',
+        nombre:'react native',
         area:3
     },
     {
         id:3,
-        nombre:'Ionic',
-        area:3
-    },
-    {
-        id:4,
-        nombre:'capacitor',
+        nombre:'ionic',
         area:3
     },
     {
         id:5,
-        nombre:'expressjs',
+        nombre:'express.js',
         area:1
     },
     {
         id:6,
-        nombre:'react js',
+        nombre:'react.js',
         area:2
     },
     {
         id:7,
-        nombre:'next js',
+        nombre:'next.js',
         area:2
     },
     {
         id:8,
-        nombre:'vue js',
+        nombre:'vue.js',
         area:2
     },
     {
         id:9,
-        nombre:'nuxt js',
+        nombre:'nuxt.js',
         area:2
     }
 ]
@@ -77,11 +72,11 @@ export const areas =[
     },
     {
         id:2,
-        nombre:'web'
+        nombre:'web apps'
     },
     {
         id:3,
-        nombre:'movil'
+        nombre:'mobile apps'
     },
     {
         id:4,
@@ -107,7 +102,7 @@ export const lenguajes =[
     },
     {
         id:4,
-        nombre:'golang',
+        nombre:'go',
         area:1
     }
 ]

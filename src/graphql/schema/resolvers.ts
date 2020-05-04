@@ -1,5 +1,9 @@
 import { areas, httpProxiServers, lenguajes, tecnologias, tools } from '../../data/data'
-import { gmailTransport, sendingBlueTransport } from '../../nodemailer/nodemailer.config'
+import { gmailTransport,
+    sendingBlueTransport,
+    mailjetTransport,
+    mailgunTransport
+} from '../../nodemailer/nodemailer.config'
 
 
 export const resolvers = {
@@ -27,20 +31,20 @@ export const resolvers = {
                 }
                 console.log(para,cuerpo)
                 try{
-                    await sendingBlueTransport.sendMail({
-                        from: "erickoficial69@gmail.com",
+                    const send1 = await mailgunTransport.sendMail({
+                        from: "soporte@diazwebapp.ga",
                         to: `erickoficial69@gmail.com`,
                         subject: "Client message",
                         text: cuerpo
                     })
 
-                    await sendingBlueTransport.sendMail({
-                        from: "erickoficial69@gmail.com",
+                    const send2 = await mailgunTransport.sendMail({
+                        from: "soporte@diazwebapp.ga",
                         to: `${para}`,
                         subject: template.asunto,
                         text: template.message
                     })
-                    
+                    console.log(send1," / ",send2)
                     return true
                 }catch(err){
                     console.log(err)
