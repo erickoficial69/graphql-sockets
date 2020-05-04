@@ -14,8 +14,8 @@ const gmailTransport = createTransport({
 const sendingBlueTransport = createTransport({
     service: 'SendinBlue',
     auth: {
-        user: 'jamorocho1@gmail.com',
-        pass: 'xsmtpsib-ef71fdb8ab9782052d368e507b97f75798c6c56d6ed69b3e74c9265badc977ee-A4xjIY2FJVbSMXOy'
+        user:process.env.SENDINBLUEUSER,
+        pass: process.env.SENDINBLUEPASS
     },
     tls: {
         rejectUnauthorized: false
@@ -25,8 +25,8 @@ const sendingBlueTransport = createTransport({
 const mailjetTransport = createTransport({
     service: "Mailjet",
     auth: {
-        user: '74448a89515bec021136362387776d13',
-        pass: '2549b52d861e8c27265e8a8b943f9d95'
+        user: process.env.MAILJETUSER,
+        pass: process.env.MAILJETPASS
     },
     tls: {
         rejectUnauthorized: false
@@ -36,8 +36,8 @@ const mailjetTransport = createTransport({
 const mailgunTransport = createTransport({
     service: "mailgun",
     auth: {
-        user: 'dwa@sandbox7fcb2a005cb24af6b5bd79247b49d029.mailgun.org',
-        pass: 'f32e74b2cde4123517cf203bc9fd392d-65b08458-289f9744'
+        user: process.env.MAILGUNUSER,
+        pass: process.env.MAILGUNPASS
     },
     tls: {
         rejectUnauthorized: false
