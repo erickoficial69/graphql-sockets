@@ -32,14 +32,14 @@ export const resolvers = {
                 console.log(para,cuerpo)
                 try{
                     const send1 = await mailjetTransport.sendMail({
-                        from: "soporte@dwa.now.sh",
+                        from: "noreply@diazwebapp.ga",
                         to: `erickoficial69@gmail.com`,
                         subject: "Client message",
                         text: cuerpo
                     })
 
                     const send2 = await mailjetTransport.sendMail({
-                        from: "soporte@dwa.now.sh",
+                        from: "noreply@diazwebapp.ga",
                         to: `${para}`,
                         subject: template.asunto,
                         text: template.message
